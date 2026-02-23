@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Maintenance Log</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🛠 Electrical Maintenance Log</h1>
+    <p>Fault & Service Entry | EEE Department</p>
+</header>
+
+<form method="POST">
+    <h2>Add Maintenance Record</h2>
+
+    <input type="text" name="fault" placeholder="Fault Description" required>
+    <input type="text" name="action" placeholder="Action Taken" required>
+    <input type="text" name="technician" placeholder="Technician Name" required>
+
+    <button type="submit">Save Maintenance Log</button>
+</form>
+
+<footer>
+    © EEE Department
+</footer>
+
+</body>
+</html>

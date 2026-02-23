@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electrical Maintenance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>⚡ Electrical Equipment Maintenance System</h1>
+    <p>EEE Department | Fault & Service Tracking</p>
+</header>
+
+<div class="container">
+
+    <a href="/logout" class="button">Logout</a>
+
+    {% if role == 'admin' %}
+        <a href="/add_equipment" class="button">➕ Add Equipment</a>
+    {% endif %}
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Equipment</th>
+            <th>Type</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for e in equipment %}
+        <tr>
+            <td>{{ e.id }}</td>
+            <td>{{ e.name }}</td>
+            <td>{{ e.type }}</td>
+            <td>{{ e.location }}</td>
+            <td>
+                {% if e.status == 'Working' %}
+                    <span class="status-working">Working</span>
+                {% else %}
+                    <span class="status-maintenance">Under Maintenance</span>
+                {% endif %}
+            </td>
+            <td>
+                <a href="/logs/{{ e.id }}" class="action">View Logs</a>
+
+                {% if role == 'admin' %}
+                    | <a href="/add_log/{{ e.id }}" class="action">Add Log</a>
+                    | <a href="/mark_working/{{ e.id }}" class="action">Mark Working</a>
+                    | <a href="/delete/{{ e.id }}" class="action"
+                         onclick="return confirm('Delete this equipment?')">Delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<footer>
+    © EEE Department | Maintenance Tracking System
+</footer>
+
+</body>
+</html>

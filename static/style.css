@@ -1,0 +1,228 @@
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",system-ui,sans-serif;
+}
+
+/* ================= ELECTRICAL EQUIPMENT BACKGROUND ================= */
+
+body{
+    min-height:100vh;
+    color:#eaffff;
+    background:
+    linear-gradient(rgba(2,6,23,.55),rgba(2,6,23,.55)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%23020b18'/%3E%3Cg stroke='%2300f2ff' stroke-width='4' fill='none' opacity='0.95'%3E%3Cpath d='M120 650 L170 120 L220 650'/%3E%3Cline x1='90' y1='300' x2='250' y2='300'/%3E%3Cline x1='105' y1='420' x2='235' y2='420'/%3E%3Crect x='420' y='310' width='220' height='230' rx='16'/%3E%3Crect x='445' y='270' width='50' height='40'/%3E%3Crect x='515' y='270' width='50' height='40'/%3E%3Crect x='585' y='270' width='50' height='40'/%3E%3Ccircle cx='480' cy='390' r='16'/%3E%3Ccircle cx='530' cy='390' r='16'/%3E%3Ccircle cx='580' cy='390' r='16'/%3E%3Crect x='780' y='420' width='260' height='120' rx='30'/%3E%3Ccircle cx='830' cy='480' r='18'/%3E%3Ccircle cx='880' cy='480' r='18'/%3E%3Ccircle cx='930' cy='480' r='18'/%3E%3Cline x1='1040' y1='450' x2='1120' y2='450'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat:repeat;
+    background-size:1200px 700px;
+    background-attachment:fixed;
+}
+
+/* ================= GRID OVERLAY ================= */
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        repeating-linear-gradient(90deg,
+            rgba(0,242,255,.07) 0px,
+            rgba(0,242,255,.07) 1px,
+            transparent 1px,
+            transparent 80px),
+        repeating-linear-gradient(0deg,
+            rgba(0,242,255,.06) 0px,
+            rgba(0,242,255,.06) 1px,
+            transparent 1px,
+            transparent 80px);
+}
+
+/* ================= HEADER ================= */
+
+header{
+    padding:22px 12px;
+    text-align:center;
+    background:linear-gradient(180deg,#020617,#071c2d);
+    border-bottom:2px solid #00eaff;
+    box-shadow:0 0 35px rgba(0,234,255,.35);
+}
+
+header h1{
+    font-size:30px;
+    color:#e9ffff;
+    letter-spacing:1px;
+    text-shadow:0 0 10px #00eaff,0 0 25px #00eaff;
+}
+
+header p{
+    margin-top:6px;
+    color:#9eeeff;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:28px auto;
+}
+
+/* ================= PANELS ================= */
+
+table,form{
+    background:linear-gradient(180deg,rgba(3,14,28,.78),rgba(3,14,28,.92));
+    border-radius:16px;
+    border:1px solid rgba(0,234,255,.45);
+    box-shadow:0 0 35px rgba(0,234,255,.18),inset 0 0 25px rgba(0,234,255,.05);
+}
+
+/* ================= BUTTONS ================= */
+
+a.button,button{
+    background:linear-gradient(135deg,#00eaff,#38bdf8,#2563eb);
+    color:#02131c;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:800;
+    border:none;
+    text-decoration:none;
+    cursor:pointer;
+    letter-spacing:.5px;
+    box-shadow:0 0 18px rgba(0,234,255,.8),0 0 40px rgba(0,234,255,.4);
+    transition:.25s;
+}
+
+a.button:hover,button:hover{
+    transform:translateY(-2px) scale(1.05);
+    box-shadow:0 0 30px rgba(0,234,255,1),0 0 60px rgba(0,234,255,.9);
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    padding:14px;
+    color:#7defff;
+    background:linear-gradient(90deg,#020617,#071c2d);
+    border-bottom:1px solid rgba(0,234,255,.4);
+    letter-spacing:1px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    color:#eaffff;
+    border-bottom:1px solid rgba(0,234,255,.15);
+}
+
+tr:hover{
+    background:rgba(0,234,255,.08);
+}
+
+/* ================= STATUS ================= */
+
+.status-working{
+    color:#22ff88;
+    font-weight:800;
+    text-shadow:0 0 10px rgba(34,255,136,.9);
+}
+
+.status-maintenance{
+    color:#ffd84d;
+    font-weight:800;
+    text-shadow:0 0 10px rgba(255,216,77,.9);
+}
+
+/* ================= ACTION LINKS ================= */
+
+a.action{
+    color:#49e6ff;
+    font-weight:700;
+    text-decoration:none;
+}
+
+a.action:hover{
+    color:#ffffff;
+    text-shadow:0 0 10px #00eaff;
+}
+
+/* ================= FORMS ================= */
+
+form{
+    max-width:440px;
+    margin:45px auto;
+    padding:28px 24px;
+    position:relative;
+    overflow:hidden;
+}
+
+form::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:linear-gradient(120deg,transparent,#00eaff,#38bdf8,transparent);
+    filter:blur(18px);
+    opacity:.8;
+    animation:flow 6s linear infinite;
+}
+
+@keyframes flow{
+    from{transform:translateX(-70%);}
+    to{transform:translateX(70%);}
+}
+
+form>*{position:relative;z-index:1;}
+
+form h2{
+    text-align:center;
+    color:#7defff;
+    margin-bottom:22px;
+    letter-spacing:1px;
+    text-shadow:0 0 15px #00eaff;
+}
+
+/* ================= INPUTS ================= */
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:14px;
+    border-radius:10px;
+    border:1px solid rgba(0,234,255,.45);
+    background:rgba(3,14,28,.75);
+    color:#eaffff;
+}
+
+input::placeholder{color:#7defff;}
+
+input:focus{
+    outline:none;
+    border-color:#00eaff;
+    box-shadow:0 0 0 2px rgba(0,234,255,.25),0 0 14px rgba(0,234,255,.7);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:18px;
+    margin-top:50px;
+    color:#9eeeff;
+    background:rgba(3,14,28,.85);
+    border-top:1px solid rgba(0,234,255,.3);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:720px){
+    header h1{font-size:22px;}
+    th,td{font-size:12px;}
+}

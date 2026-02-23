@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maintenance History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>📜 Maintenance History</h1>
+</header>
+
+<div class="container">
+
+{% if logs %}
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Fault</th>
+        <th>Action Taken</th>
+        <th>Technician</th>
+    </tr>
+
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.log_date }}</td>
+        <td>{{ log.fault }}</td>
+        <td>{{ log.action_taken }}</td>
+        <td>{{ log.technician }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p style="text-align:center;">No records found.</p>
+{% endif %}
+
+<br>
+<a href="/" class="button">⬅ Back</a>
+
+</div>
+
+</body>
+</html>
